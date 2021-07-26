@@ -1,0 +1,1 @@
+from .EasyTable import EasyTable

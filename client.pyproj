@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6d185201-1b0f-48d5-8bc1-d53a37bb0beb}</ProjectGuid>
+    <ProjectHome />
+    <StartupFile>main.py</StartupFile>
+    <SearchPath>src;..\client</SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <InterpreterId>MSBuild|env1|$(MSBuildProjectFullPath)</InterpreterId>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="data\database.frame" />
+    <Content Include="requirements.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="data\base_dirs.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="data\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\database\database.py" />
+    <Compile Include="src\database\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\database\_database.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\dialog.py" />
+    <Compile Include="src\easy_table\EasyTable.py" />
+    <Compile Include="src\easy_table\__init__.py" />
+    <Compile Include="src\excel\Excel03.py" />
+    <Compile Include="src\excel\Excel07.py" />
+    <Compile Include="src\excel\ExcelFile.py" />
+    <Compile Include="src\excel\__init__.py" />
+    <Compile Include="src\unite_str.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\statement\_statement.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\statement\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\statement\statement.py" />
+    <Compile Include="src\stdout.py" />
+    <Compile Include="main.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="data\" />
+    <Folder Include="src\" />
+    <Folder Include="src\easy_table\" />
+    <Folder Include="src\excel\" />
+    <Folder Include="src\database\" />
+    <Folder Include="src\statement\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Interpreter Include="env\">
+      <Id>env1</Id>
+      <Version>3.7</Version>
+      <Description>env (Python 3.7 (32-bit))</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X86</Architecture>
+    </Interpreter>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+</Project>
